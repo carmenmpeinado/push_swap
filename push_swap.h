@@ -1,7 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#  include "libft/libft.h"
+# include "libft/libft.h"
 
 int		checked_duplicates(char **numbers);
 int		is_input_ok(char **argv);
