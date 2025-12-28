@@ -3,7 +3,7 @@ CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 
-INCLUDES	= -I includes -I libft
+INCLUDES	= -I libft
 LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 

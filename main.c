@@ -62,7 +62,10 @@ int	main(int argc, char **argv)
 	char	**array_of_nums;
 
 	if (argc < 2)
+	{
+		write(2, "Error\n", 6);
 		return (0);
+	}
 	array_of_nums = normalize_input(argv + 1);
 	if (!array_of_nums || !is_input_ok(array_of_nums))
 	{
