@@ -2,16 +2,15 @@
 
 static void	reverse_rotate(num_list **stack)
 {
-	num_list *tail;
-	num_list *before_tail;
+	num_list	*tail;
+	num_list	*before_tail;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	tail = *stack;
-	tail->index = ft_lstsize(*stack);
 	before_tail = *stack;
-	while (before_tail->next != tail)
+	while (before_tail->next->next)
 		before_tail = before_tail->next;
+	tail = before_tail->next;
 	before_tail->next = NULL;
 	tail->next = *stack;
 	*stack = tail;

@@ -5,7 +5,7 @@ static void	rotate(num_list **stack)
 	num_list	*first;
 	num_list	*last;
 
-	if(!(*stack)->next || !*stack)
+	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
 	last = ft_lstlast(*stack);

@@ -1,6 +1,3 @@
-
-
-
 #include "libft/libft.h"
 
 static void	swap(num_list **stack)
@@ -8,7 +5,7 @@ static void	swap(num_list **stack)
 	num_list	*first;
 	num_list	*second;
 
-	if (!(*stack)->next || !*stack)
+	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
 	second = first->next;

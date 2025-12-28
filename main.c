@@ -50,7 +50,7 @@ int	push_swap(char **numbers)
 		if (ft_lstsize(stack_a) <= 5)
 			quick_sort(&stack_a, &stack_b, ft_lstsize(stack_a));
 		else
-			radix_sort(&stack_a, &stack_b);
+			ksort(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);

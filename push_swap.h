@@ -22,7 +22,7 @@ void	ss(num_list **stack_a, num_list **stack_b);
 int		locate_smallest_value(num_list *stack);
 void	assign_position(num_list **stack);
 void	quick_sort(num_list **stack_a, num_list **stack_b, int len);
-void	radix_sort(num_list **stack_a, num_list **stack_b);
+void	ksort(num_list **stack_a, num_list **stack_b);
 int		push_swap(char **numbers);
 
 #endif
