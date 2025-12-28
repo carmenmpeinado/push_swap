@@ -38,26 +38,6 @@ int	build_stacks(num_list **stack_a, num_list **stack_b, char **argv)
 	return (1);
 }
 
-
-
-
-int	main(int argc, char **argv)
-{
-	char	**array_of_nums;
-
-	if (argc < 2)
-		return (0);
-	array_of_nums = normalize_input(argv + 1);
-	if (!array_of_nums || !is_input_ok(array_of_nums))
-	{
-		write(2, "Error\n", 6);
-		if (array_of_nums)
-			free_split(array_of_nums);
-		return (1);
-	}
-
-}
-
 int	push_swap(char **numbers)
 {
 	num_list	*stack_a;
@@ -77,3 +57,25 @@ int	push_swap(char **numbers)
 	return (1);
 }
 
+int	main(int argc, char **argv)
+{
+	char	**array_of_nums;
+
+	if (argc < 2)
+		return (0);
+	array_of_nums = normalize_input(argv + 1);
+	if (!array_of_nums || !is_input_ok(array_of_nums))
+	{
+		write(2, "Error\n", 6);
+		if (array_of_nums)
+			free_split(array_of_nums);
+		return (1);
+	}
+	if (!push_swap(array_of_nums))
+	{
+		free_split(array_of_nums);
+		return (1);
+	}
+	free_split(array_of_nums);
+	return (0);
+}
