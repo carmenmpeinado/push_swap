@@ -1,0 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 01:46:11 by capeinad          #+#    #+#             */
+/*   Updated: 2025/12/05 12:07:49 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	ft_puthex(unsigned int nbr, char c)
+{
+	char	*base;
+	int		i;
+
+	if (c == 'X')
+		base = "0123456789ABCDEF";
+	else
+		base = "0123456789abcdef";
+	i = 0;
+	if (nbr >= 16)
+		i += ft_puthex((nbr / 16), c);
+	i += write(1, &base[nbr % 16], 1);
+	return (i);
+}
+
+int	ft_putchar(char c)
+{
+	int	i;
+
+	i = 0;
+	i = write(1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str != NULL)
+	{
+		while (str[i])
+			i += write(1, &str[i], 1);
+	}
+	else
+	{
+		write(1, "(null)", 6);
+		i = 6;
+	}
+	return (i);
+}
+
+int	ft_putnbr(int n)
+{
+	int		i;
+	char	digit;
+
+	i = 0;
+	if (n == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return (11);
+	}
+	if (n < 0)
+	{
+		i += write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		i += ft_putnbr(n / 10);
+	digit = (n % 10 + '0');
+	i += write(1, &digit, 1);
+	return (i);
+}
