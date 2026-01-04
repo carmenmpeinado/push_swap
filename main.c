@@ -1,9 +1,20 @@
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:38:34 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 17:42:52 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	free_stack(num_list **stack)
+void	free_stack(t_num_list **stack)
 {
-	num_list	*tmp;
+	t_num_list	*tmp;
 
 	if (!stack || !*stack)
 		return ;
@@ -16,10 +27,10 @@ void	free_stack(num_list **stack)
 	*stack = NULL;
 }
 
-int	build_stacks(num_list **stack_a, num_list **stack_b, char **argv)
+int	build_stacks(t_num_list **stack_a, t_num_list **stack_b, char **argv)
 {
-	int	i;
-	num_list	*info_in;
+	int			i;
+	t_num_list	*info_in;
 
 	*stack_a = NULL;
 	*stack_b = NULL;
@@ -40,8 +51,8 @@ int	build_stacks(num_list **stack_a, num_list **stack_b, char **argv)
 
 int	push_swap(char **numbers)
 {
-	num_list	*stack_a;
-	num_list	*stack_b;
+	t_num_list	*stack_a;
+	t_num_list	*stack_b;
 
 	if (!build_stacks(&stack_a, &stack_b, numbers))
 		return (0);

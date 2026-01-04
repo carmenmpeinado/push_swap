@@ -6,13 +6,13 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:38:55 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 14:11:46 by capeinad         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:33:24 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(num_list *lst)
+int	ft_lstsize(t_num_list *lst)
 {
 	int	len;
 

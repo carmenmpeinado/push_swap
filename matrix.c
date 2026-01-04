@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:38:46 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 17:38:47 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	assign_position(num_list **stack)
+void	assign_position(t_num_list **stack)
 {
-	num_list	*current_node;
-	num_list	*tmp;
+	t_num_list	*current_node;
+	t_num_list	*tmp;
 	int			position;
 
 	current_node = *stack;

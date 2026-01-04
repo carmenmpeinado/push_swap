@@ -6,15 +6,15 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:37:17 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 14:11:09 by capeinad         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:31:40 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(num_list **lst, num_list *new)
+void	ft_lstadd_back(t_num_list **lst, t_num_list *new)
 {
-	num_list	*last;
+	t_num_list	*last;
 
 	if (!lst || new == NULL)
 		return ;

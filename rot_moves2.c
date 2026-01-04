@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rot_moves2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:39:40 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 17:39:41 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 
-static void	rotate(num_list **stack)
+static void	rotate(t_num_list **stack)
 {
-	num_list	*first;
-	num_list	*last;
+	t_num_list	*first;
+	t_num_list	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -14,19 +26,19 @@ static void	rotate(num_list **stack)
 	last->next = first;
 }
 
-void	ra(num_list **stack_a)
+void	ra(t_num_list **stack_a)
 {
 	rotate(stack_a);
 	write(1, "ra\n", 3);
 }
 
-void	rb(num_list **stack_b)
+void	rb(t_num_list **stack_b)
 {
 	rotate(stack_b);
 	write(1, "rb\n", 3);
 }
 
-void	rr(num_list **stack_a, num_list **stack_b)
+void	rr(t_num_list **stack_a, t_num_list **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

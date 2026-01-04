@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:39:49 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 17:40:39 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	free_split(char **args)
@@ -17,9 +29,9 @@ void	free_split(char **args)
 
 static int	how_many_nums(char **argv)
 {
-	int	i;
-	int	j;
-	int	count;
+	int		i;
+	int		j;
+	int		count;
 	char	**split;
 
 	i = 0;

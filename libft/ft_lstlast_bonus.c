@@ -6,15 +6,15 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:38:36 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 14:11:36 by capeinad         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:33:05 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-num_list	*ft_lstlast(num_list *lst)
+t_num_list	*ft_lstlast(t_num_list *lst)
 {
-	num_list	*final_node;
+	t_num_list	*final_node;
 
 	if (!lst)
 		return (NULL);

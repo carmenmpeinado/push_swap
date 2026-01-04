@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   p_moves.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:39:02 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 17:42:20 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 
-void	pa(num_list **stack_a, num_list **stack_b)
+void	pa(t_num_list **stack_a, t_num_list **stack_b)
 {
-	num_list	*tmp;
+	t_num_list	*tmp;
 
 	if (!*stack_b)
 		return ;
@@ -13,11 +25,11 @@ void	pa(num_list **stack_a, num_list **stack_b)
 	write(1, "pa\n", 3);
 }
 
-void	pb(num_list **stack_a, num_list **stack_b)
+void	pb(t_num_list **stack_a, t_num_list **stack_b)
 {
-	num_list	*tmp;
+	t_num_list	*tmp;
 
-	if(!*stack_a)
+	if (!*stack_a)
 		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
@@ -25,5 +37,3 @@ void	pb(num_list **stack_a, num_list **stack_b)
 	*stack_b = tmp;
 	write(1, "pb\n", 3);
 }
-
-

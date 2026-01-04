@@ -1,11 +1,14 @@
-/* 
-
-no simbols, no letters, just numbers and - / + / spaces
-no min / max integers
-no duplicates
-no void
-
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_input.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:39:58 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 20:08:40 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
@@ -29,6 +32,7 @@ int	checked_duplicates(char **numbers)
 	}
 	return (0);
 }
+
 static int	is_number(char *s)
 {
 	int	i;
@@ -46,6 +50,7 @@ static int	is_number(char *s)
 	}
 	return (1);
 }
+
 static int	number_is_valid(char *s)
 {
 	long long	num;
@@ -81,7 +86,7 @@ int	is_input_ok(char **argv)
 	while (argv[i])
 	{
 		if (!is_number(argv[i]) || !number_is_valid(argv[i]))
-			return(0);
+			return (0);
 		i++;
 	}
 	if (checked_duplicates(argv))

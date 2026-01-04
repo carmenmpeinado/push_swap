@@ -1,7 +1,18 @@
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   order.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:38:52 by capeinad          #+#    #+#             */
+/*   Updated: 2026/01/03 20:29:07 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	sorted(num_list *stack)
+int	sorted(t_num_list *stack)
 {
 	while (stack && stack->next)
 	{
@@ -12,7 +23,7 @@ int	sorted(num_list *stack)
 	return (1);
 }
 
-int	locate_smallest_value(num_list *stack)
+int	locate_smallest_value(t_num_list *stack)
 {
 	int	smallest;
 	int	position;
@@ -34,7 +45,7 @@ int	locate_smallest_value(num_list *stack)
 	return (position);
 }
 
-static int	locate_highest_index(num_list *stack)
+static int	locate_highest_index(t_num_list *stack)
 {
 	int	highest;
 	int	position;
@@ -56,7 +67,7 @@ static int	locate_highest_index(num_list *stack)
 	return (position);
 }
 
-static void	move_highest_to_top(num_list **stack_b)
+static void	move_highest_to_top(t_num_list **stack_b)
 {
 	int	position;
 	int	size;
@@ -75,7 +86,7 @@ static void	move_highest_to_top(num_list **stack_b)
 	}
 }
 
-void	ksort(num_list **stack_a, num_list **stack_b)
+void	ksort(t_num_list **stack_a, t_num_list **stack_b)
 {
 	int	chunk;
 	int	size;
@@ -83,11 +94,14 @@ void	ksort(num_list **stack_a, num_list **stack_b)
 
 	assign_position(stack_a);
 	size = ft_lstsize(*stack_a);
-	chunk = (size <= 100) ? 15 : 30;
+	if (size <= 100)
+		chunk = 15;
+	else
+		chunk = 30;
 	i = 0;
 	while (*stack_a)
 	{
-		if((*stack_a)->index <= i)
+		if ((*stack_a)->index <= i)
 			(pb(stack_a, stack_b), rb(stack_b), i++);
 		else if ((*stack_a)->index <= i + chunk)
 			(pb(stack_a, stack_b), i++);
